@@ -1,0 +1,13 @@
+[Unit]
+Description=A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/frpc -c /etc/frp/frpc.ini
+Restart=always
+User=frp
+Group=frp
+
+[Install]
+WantedBy=multi-user.target
